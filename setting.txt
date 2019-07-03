@@ -1,0 +1,35 @@
+mainnet
+http://wallet.v.systems:9922/
+
+testnet
+http://test.v.systems:9922
+
+localhost
+http://127.0.0.1:9922
+
+
+
+
+
+
+server install
+https://github.com/virtualeconomy/v-systems/wiki/Instructions-for-Exchanges
+
+pyvsystems sdk
+https://github.com/virtualeconomy/pyvsystems/wiki/PYVSYSTEMS-User-Guide-Specification-(English)
+
+vsys testnet api
+http://test.v.systems:9922/api-docs/index.html
+
+vsys testnet blockchain
+https://testexplorer.v.systems/
+
+vsys mainnet blockchain
+https://explorer.v.systems/
+
+
+https://v.systems/wallet.html
+slagga
+vsysslagga
+
+fancy honey tenant scout limb tape surge again glide uphold south inform hope bottom cook
