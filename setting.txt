@@ -21,6 +21,9 @@ https://github.com/virtualeconomy/pyvsystems/wiki/PYVSYSTEMS-User-Guide-Specific
 vsys testnet api
 http://test.v.systems:9922/api-docs/index.html
 
+vsys localhost api
+http://192.168.1.238:9922
+
 vsys testnet blockchain
 https://testexplorer.v.systems/
 
