@@ -31,8 +31,35 @@ vsys mainnet blockchain
 https://explorer.v.systems/
 
 
+
 https://v.systems/wallet.html
 slagga
 vsysslagga
 
 fancy honey tenant scout limb tape surge again glide uphold south inform hope bottom cook
+
+
+
+testnet vsys accounts 
+alice :
+{
+    "code": 0,
+    "data": {
+        "address": "ATtfRBqjaYz2PKLoY6wfkK1t9q5BFXYavCH",
+        "nonce": 0,
+        "privateKey": "HCEjVuZ2sRbG5MaLzRkaL69u6m65vSpYY7c99ovhHx4z",
+        "publicKey": "8Hx7JnGDMowf9FpRBoVkQccBY3NJ2haYJVxNgnFL3sJe",
+        "seed": "artwork mail universe hover idea possible violin join satisfy become double heavy already leader sauce"
+    }
+}
+bob :
+{
+    "code": 0,
+    "data": {
+        "address": "AUCd9FJRRXh2reGFywhRCPCg71qdisZ3dtz",
+        "nonce": 0,
+        "privateKey": "6SvUmhoDvS1RSkHQW5r7cxD7QtnNEnEg51CJHCqC3PRt",
+        "publicKey": "8kiGJDjimB8sbe26EMMFtHgMLB3TBzBUXMV2KgxPttGf",
+        "seed": "repair unique unknown bike victory expire height school atom despair group shove arena fabric know"
+    }
+}

@@ -6,3 +6,4 @@
 
 * $ git clone https://github.com/virtualeconomy/pyvsystems.git
 * $ pip3 install -r ./pyvsystems.git/requirements.txt
+* $ python script.py
