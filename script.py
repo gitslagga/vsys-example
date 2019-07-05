@@ -7,8 +7,6 @@ import base58
 import json
 
 app = Flask(__name__)
-logging.basicConfig(level=logging.DEBUG, format='%(asctime)s:%(name)s:%(levelname)s:%(message)s')
-logging.warning('logging info test')
 
 # storage data on memory
 chain = pyvsystems.testnet_chain()  # pyvsystems.default_chain()
@@ -27,7 +25,7 @@ def address():
     
 @app.route('/addressinfo', methods=['POST'])
 def addressinfo():
-    logging.info("request params: {}".format(request.json))
+    app.logger.warning("request params: {}".format(request.json))
 
     if not request.json or 'address' not in request.json or 'publicKey' not in request.json:
         abort(400)
@@ -39,7 +37,7 @@ def addressinfo():
 
 @app.route('/addressbalance', methods=['POST'])
 def addressbalance():
-    logging.info("request params: {}".format(request.json))
+    app.logger.warning("request params: {}".format(request.json))
 
     if not request.json or 'address' not in request.json:
         abort(400)
@@ -62,7 +60,7 @@ def lastblock():
 
 @app.route('/block', methods=['POST'])
 def block():
-    logging.info("request params: {}".format(request.json))
+    app.logger.warning("request params: {}".format(request.json))
 
     if not request.json or 'height' not in request.json:
         abort(400)
@@ -75,7 +73,7 @@ def block():
 
 @app.route('/check', methods=['POST'])
 def check():
-    logging.info("request params: {}".format(request.json))
+    app.logger.warning("request params: {}".format(request.json))
 
     if not request.json or 'txid' not in request.json:
         abort(400)
@@ -88,7 +86,7 @@ def check():
 
 @app.route('/sendpayment', methods=['POST'])
 def sendpayment():
-    logging.info("request params: {}".format(request.json))
+    app.logger.warning("request params: {}".format(request.json))
 
     if not request.json or 'privateKey' not in request.json or 'address' not in request.json or 'amount' not in request.json:
         abort(400)
@@ -115,7 +113,7 @@ def sendpayment():
         result['fee'] = resp['fee']
     except Exception as ex:
         # Handle Invalid Parameter issue here
-        print("Invalid Parameter: {}".format(ex))
+        app.logger.warning("Sendpayment Exception: {}".format(ex))
         return jsonify({'code': 500})
         
     return jsonify({'code': 0, 'data': result})
@@ -123,6 +121,10 @@ def sendpayment():
 
 
 if __name__ == "__main__":
-    # 将host设置为0.0.0.0，则外网用户也可以访问到这个服务
-    app.run(host="0.0.0.0", debug=True)
+    handler = logging.FileHandler('flask.log', encoding='UTF-8')
+    handler.setLevel(logging.WARNING)
+    logging_format = logging.Formatter('%(asctime)s - %(levelname)s - %(filename)s - %(funcName)s - %(lineno)s - %(message)s')
+    handler.setFormatter(logging_format)
+    app.logger.addHandler(handler)
+    app.run(debug=True)
     
