@@ -8,8 +8,3 @@
 * $ pip3 install -r ./pyvsystems.git/requirements.txt
 * $ python script.py
 
-
-#### TODO List
-* Logging File
-* Server safe run
-* restful api note
